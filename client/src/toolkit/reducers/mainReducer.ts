@@ -33,6 +33,13 @@ const mainReducer = createSlice({
         },
         setOrderIdlDeleteModalTitle: (state, action) => {
             state.orderIdDeleteModalTitle = action.payload
+        },
+        removeOrder: (state) => {
+            state.orderIdVisible.visible = false
+            const indexToRemove = state.orders.findIndex(order => order.id === state.orderIdDeleteModalTitle)
+            if (indexToRemove !== -1) {
+                state.orders.splice(indexToRemove, 1)
+            }
         }
     }
 })
@@ -41,6 +48,7 @@ export const {
     setFilterTypes,
     setOrdersProducts,
     setOrderIdVisible,
-    setOrderIdlDeleteModalTitle
+    setOrderIdlDeleteModalTitle,
+    removeOrder
 } = mainReducer.actions
 export default mainReducer.reducer

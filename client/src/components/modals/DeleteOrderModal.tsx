@@ -1,5 +1,5 @@
 import {useDeleteOrderModal} from "../../componentsHooks/componentsHooks"
-import {setOrderIdlDeleteModalTitle} from "../../toolkit/reducers/mainReducer"
+import {removeOrder, setOrderIdlDeleteModalTitle, setOrderIdVisible} from "../../toolkit/reducers/mainReducer"
 
 interface DeleteOrderModalPropsTypes {
     orderId: number
@@ -13,7 +13,7 @@ const DeleteOrderModal = ({orderId}: DeleteOrderModalPropsTypes) => {
         <button
             onClick={() => dispatch(setOrderIdlDeleteModalTitle(orderId))}
             type="button" className="btn btn-secondary btn-sm" data-bs-toggle="modal"
-                data-bs-target="#deleteModal">
+            data-bs-target="#deleteModal">
             delete
         </button>
         <div className="modal fade" id="deleteModal" tabIndex={-1} aria-labelledby="deleteModalLabel"
@@ -31,7 +31,12 @@ const DeleteOrderModal = ({orderId}: DeleteOrderModalPropsTypes) => {
                     <div className="modal-footer">
                         <button type="button" className="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close
                         </button>
-                        <button type="button" className="btn btn-danger btn-sm" data-bs-dismiss="modal">Delete</button>
+                        <button onClick={() => dispatch(removeOrder())}
+                                type="button"
+                                className="btn btn-danger btn-sm"
+                                data-bs-dismiss="modal">
+                            Delete
+                        </button>
                     </div>
                 </div>
             </div>

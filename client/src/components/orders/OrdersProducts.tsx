@@ -38,12 +38,13 @@ export const OrdersList = () => {
                         </div>
                         <div className="col"><DeleteOrderModal orderId={order.id}/></div>
                         <div className="col">
+                            {order.products.length > 0 &&
                             <button onClick={() =>
                                 dispatch(setOrderIdVisible({visible: true, orderId: order.id}))}
                                     type="button"
                                     className="btn btn-secondary btn-sm">
                                 details
-                            </button>
+                            </button>}
                         </div>
                     </div>
                 </div>
