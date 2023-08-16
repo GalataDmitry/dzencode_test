@@ -1,7 +1,9 @@
 Clone the repository: git clone https://github.com/GalataDmitry/dzencode_test.git.
 Check 3000, 3040 ports on your computer, for correct start the project ports must be free.
 For run app you need to make sure that Docker and Docker compose was installed on your computer.
-Then go to the root directory of cloned project and run "docker-compose up" command in the terminal.
+Then go to the root directory of cloned project and run "sudo docker-compose up" command in the terminal.
+Sometimes i had problems with start this command.
+Go to the /.docker dir and remove config.json file to fix it.
 After open your favorite browser and go to http://localhost:3000.
 
 The application has two pages orders and products.
