@@ -40,8 +40,7 @@ const DeleteOrderModal = ({orderId}: DeleteOrderModalPropsTypes) => {
                                 type="button"
                                 className="btn btn-danger btn-sm"
                                 data-bs-dismiss="modal"
-                                data-testid={`${REMOVE_ORDER_BUTTON}-${orderId}`}
-                        >
+                                data-testid={`${REMOVE_ORDER_BUTTON}-${orderId}`}>
                             Delete
                         </button>
                     </div>

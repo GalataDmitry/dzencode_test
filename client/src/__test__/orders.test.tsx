@@ -4,6 +4,7 @@ import {Provider} from 'react-redux'
 import {store} from "../toolkit/store"
 import Orders from "../components/orders/Orders"
 import {useOrders} from "../componentsHooks/componentsHooks"
+import {removeOrder, setOrderIdlDeleteModalTitle, setOrderIdVisible} from "../toolkit/reducers/mainReducer"
 import {
     CLOSE_ORDER_DETAILS_BUTTON,
     DELETE_BUTTON,
@@ -13,10 +14,9 @@ import {
     PRODUCTS_DETAILS_BUTTON,
     REMOVE_ORDER_BUTTON
 } from "./test_ids"
-import {removeOrder, setOrderIdlDeleteModalTitle, setOrderIdVisible} from "../toolkit/reducers/mainReducer"
 
 describe('Orders', () => {
-    it('should delete order', () => {
+    it('should delete order', async () => {
 
         render(<Provider store={store}><Orders/></Provider>)
         const {result} = renderHook(() => useOrders(), {

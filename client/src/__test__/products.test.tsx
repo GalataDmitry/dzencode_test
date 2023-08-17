@@ -21,12 +21,12 @@ describe('Products', () => {
         expect(screen.getAllByTestId(PRODUCTS_ITEMS)).toHaveLength(4)
         expect(result.current.productsData).toHaveLength(4)
 
-        userEvent.selectOptions(productsSelect, "TV")
-        expect(productsSelect).toHaveTextContent('TV')
-
         act(() => {
+            userEvent.selectOptions(productsSelect, "TV")
             store.dispatch(setFilterType('TV'))
         })
+
+        expect(productsSelect).toHaveTextContent('TV')
 
         expect(screen.getAllByTestId(PRODUCTS_ITEMS)).toHaveLength(1)
         expect(result.current.productsData).toHaveLength(1)
