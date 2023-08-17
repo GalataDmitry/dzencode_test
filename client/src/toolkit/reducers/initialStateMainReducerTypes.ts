@@ -37,7 +37,7 @@ export interface OrdersTypes {
 
 export interface InitialStateMainReducerTypes {
     filterType: string
-    filterTypes: []
+    filterTypes: string[]
     orderIdVisible: { visible: boolean, orderId: number }
     orderIdDeleteModalTitle: number | null
     orders: OrdersTypes[]

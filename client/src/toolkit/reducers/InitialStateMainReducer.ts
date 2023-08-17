@@ -12,7 +12,7 @@ const order: OrdersTypes = {
     ]
 }
 
-const product: ProductsTypes = {
+export const product: ProductsTypes = {
     id: 1,
     serialNumber: 1234,
     isNew: 1,

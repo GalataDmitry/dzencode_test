@@ -1,5 +1,5 @@
 import {useDeleteOrderModal} from "../../componentsHooks/componentsHooks"
-import {removeOrder, setOrderIdlDeleteModalTitle, setOrderIdVisible} from "../../toolkit/reducers/mainReducer"
+import {removeOrder, setOrderIdlDeleteModalTitle} from "../../toolkit/reducers/mainReducer"
 
 interface DeleteOrderModalPropsTypes {
     orderId: number
