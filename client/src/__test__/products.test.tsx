@@ -1,11 +1,11 @@
 import {act, render, renderHook, screen} from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import {Provider} from 'react-redux'
-import {store} from "../../../toolkit/store"
-import {setFilterType} from "../../../toolkit/reducers/mainReducer"
+import {store} from "../toolkit/store"
+import {setFilterType} from "../toolkit/reducers/mainReducer"
 import {PRODUCTS_ITEMS, PRODUCTS_SELECT, PRODUCTS_TITLE, PRODUCTS_TYPE} from "./test_ids"
-import Products from "../Products"
-import {useProducts} from "../../../componentsHooks/componentsHooks"
+import Products from "../components/products/Products"
+import {useProducts} from "../componentsHooks/componentsHooks"
 
 describe('Products', () => {
     it('should render filtered products list',  () => {

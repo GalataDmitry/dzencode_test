@@ -2,9 +2,8 @@ import moment from "moment"
 import {animated} from '@react-spring/web'
 import {useProducts} from "../../componentsHooks/componentsHooks"
 import Select from "./Select"
-import {PRODUCTS_ITEMS, PRODUCTS_TITLE, PRODUCTS_TYPE} from "./__test__/test_ids"
+import {PRODUCTS_ITEMS, PRODUCTS_TITLE, PRODUCTS_TYPE} from "../../__test__/test_ids"
 import './Products.css'
-import {setFilterType} from "../../toolkit/reducers/mainReducer";
 
 const Products = () => {
 

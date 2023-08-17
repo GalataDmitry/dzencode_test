@@ -4,6 +4,13 @@ import {v4 as uuidv4} from 'uuid'
 import DeleteOrderModal from "../modals/DeleteOrderModal"
 import {setOrderIdVisible} from "../../toolkit/reducers/mainReducer"
 import {useOrders} from "../../componentsHooks/componentsHooks"
+import {
+    CLOSE_ORDER_DETAILS_BUTTON,
+    ORDER_TITLE,
+    ORDERS_ITEMS,
+    ORDERS_PRODUCTS_DETAILS,
+    PRODUCTS_DETAILS_BUTTON
+} from "../../__test__/test_ids"
 
 export const OrdersList = () => {
 
@@ -16,7 +23,9 @@ export const OrdersList = () => {
     return <div className="col">
         <animated.div style={{...springs}}>
             {orders.map(order => (
-                <div key={order.id} className='container__items__products container border p-4 mt-3 text-center'>
+                <div key={order.id}
+                     className='container__items__products container border p-4 mt-3 text-center'
+                data-testid={`${ORDERS_ITEMS}-${order.id}`}>
                     <div className="row align-items-center">
                         <div className="col-2 fst-italic">{order.title}</div>
                         <div className="col-1 fst-italic">{order.products.length}</div>
@@ -42,7 +51,9 @@ export const OrdersList = () => {
                             <button onClick={() =>
                                 dispatch(setOrderIdVisible({visible: true, orderId: order.id}))}
                                     type="button"
-                                    className="btn btn-secondary btn-sm">
+                                    className="btn btn-secondary btn-sm"
+                                    data-testid={`${PRODUCTS_DETAILS_BUTTON}-${order.id}`}
+                            >
                                 details
                             </button>}
                         </div>
@@ -66,14 +77,15 @@ export const ProductsList = () => {
     return <div className="col">
         <animated.div style={{...springs}}>
             {(orderIdVisible.visible && orderProducts.length > 0) &&
-            <div className='container__items__products container border p-4 text-center mt-3'>
+            <div className='container__items__products container border p-4 text-center mt-3'
+            data-testid={ORDERS_PRODUCTS_DETAILS}>
                 <div className="row">
-                    <div className="col ms-3 fst-italic">
+                    <div className="col ms-3 fst-italic" data-testid={ORDER_TITLE}>
                         {orderTitle}
                     </div>
                     <button onClick={() =>
                         dispatch(setOrderIdVisible({orderId: orderIdVisible.orderId, visible: false}))}
-                            type="button" className="btn-close "/>
+                            type="button" className="btn-close " data-testid={CLOSE_ORDER_DETAILS_BUTTON}/>
                 </div>
                 <hr/>
                 {orderProducts.map(product => (

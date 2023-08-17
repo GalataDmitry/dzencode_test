@@ -8,3 +8,7 @@ export interface AnimatedNavLinkPropsTypes {
 export interface LayoutPropsTypes {
     children: ReactNode
 }
+
+export interface DeleteOrderModalPropsTypes {
+    orderId: number
+}

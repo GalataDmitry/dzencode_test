@@ -1,6 +1,6 @@
 import {setFilterType} from "../../toolkit/reducers/mainReducer"
 import {useProducts} from "../../componentsHooks/componentsHooks"
-import {PRODUCTS_SELECT} from "./__test__/test_ids"
+import {PRODUCTS_SELECT} from "../../__test__/test_ids"
 
 const Select = () => {
 
